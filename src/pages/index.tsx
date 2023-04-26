@@ -1,9 +1,8 @@
 import Section from "@/components/Base/Section";
 import Experience from "@/components/Experience";
+import IconLink from "@/components/IconLink";
 import SkillList from "@/components/SkillList";
 import TaskList from "@/components/TaskList";
-import GithubIcon from "@public/github.svg";
-import RssIcon from "@public/rss.svg";
 
 export default function Home() {
   return (
@@ -20,20 +19,12 @@ export default function Home() {
           수 있다는 것에 크게 흥미를 느끼고 프론트엔드 개발자로 커리어를 전환
           중입니다.
         </p>
-        <div className="text-blue-500">
-          <div className="flex items-center gap-1">
-            <GithubIcon />
-            <a href="https://github.com/minjongbaek">
-              https://github.com/minjongbaek
-            </a>
-          </div>
-          <div className="flex items-center gap-1">
-            <RssIcon />
-            <a href="https://blog.minjongdev.com">
-              https://blog.minjongdev.com
-            </a>
-          </div>
-        </div>
+        <IconLink type="github" link="https://github.com/minjongbaek">
+          minjongbaek
+        </IconLink>
+        <IconLink type="rss" link="https://blog.minjongdev.com">
+          blog.minjongdev.com
+        </IconLink>
       </Section>
       <Section title="경력">
         <div className="flex flex-col gap-12">
@@ -64,6 +55,15 @@ export default function Home() {
               title="다독다독"
               description="책에 대한 인사이트를 공유하고 소통하는 독서 소셜 플랫폼"
             >
+              <IconLink
+                type="github"
+                link="https://github.com/prgrms-web-devcourse/Team-Gaerval-Dadok-FE"
+              >
+                Team-Gaerval-Dadok-FE
+              </IconLink>
+              <IconLink link="https://dadok.vercel.app">
+                dev.dadok.site
+              </IconLink>
               <TaskList
                 experiences={[
                   "Suspense와 ErrorBoundary를 이용해 상태에 따른 UI를 선언적으로 렌더링하도록 구현",
@@ -87,10 +87,20 @@ export default function Home() {
 
           <Experience>
             <Experience.Period startDate="2023.01.01" endDate="2023.03.01" />
+
             <Experience.Info
               title="디그디그딥"
               description="커뮤니케이션을 통한 학습을 제공하는 개발자 전용 SNS"
             >
+              <IconLink
+                type="github"
+                link="https://github.com/prgrms-fe-devcourse/FEDC3_DigDigDeep_Yuri"
+              >
+                FEDC3_DigDigDeep_Yuri
+              </IconLink>
+              <IconLink link="https://dig-dig-deep.vercel.app">
+                dig-dig-deep.vercel.app
+              </IconLink>
               <TaskList
                 experiences={[
                   "지속적으로 성능을 개선하여 1차 배포시 90점이던 LightHouse Performance를 100점으로 향상",
@@ -115,6 +125,15 @@ export default function Home() {
               title="Blog.minjongdev"
               description="기록을 남기기 위한 개발 블로그"
             >
+              <IconLink
+                type="github"
+                link="https://github.com/minjongbaek/Blog.minjongdev"
+              >
+                Blog.minjongdev
+              </IconLink>
+              <IconLink link="https://blog.minjongdev.com">
+                blog.minjongdev.com
+              </IconLink>
               <TaskList
                 experiences={[
                   "빠른 배포와 개발 속도를 위해 웹 개발에 필요한 복잡성을 최소화하고 다른 라이브러리나 프레임워크에 구애받지 않는 Astro 프레임워크를 도입",
@@ -136,6 +155,15 @@ export default function Home() {
               title="Vanilla Notion"
               description="Vanllia JS로 노션을 클로닝한 미니 프로젝트"
             >
+              <IconLink
+                type="github"
+                link="https://github.com/minjongbaek/vanilla-notion"
+              >
+                Vanilla Notion
+              </IconLink>
+              <IconLink link="https://vanilla-notion.minjongdev.com">
+                vanilla-notion.minjongdev.com
+              </IconLink>
               <TaskList
                 experiences={[
                   "state가 변경되는 경우에만 UI가 업데이트 되도록 구현",
@@ -167,7 +195,11 @@ export default function Home() {
 
           <Experience>
             <Experience.Period startDate="2020.09.01" endDate="2021.01.01" />
-            <Experience.Info title="슬기로운 아파트생활 개발">
+            <Experience.Info
+              title="슬기로운 아파트 생활 개발"
+              description="아파트 입주민을 위한 커뮤니티"
+            >
+              <IconLink link="http://wiselife.co.kr">wiselife.co.kr</IconLink>
               <TaskList
                 experiences={[
                   "Swagger를 도입하여 엑셀로 관리되던 API 문서를 자동화",
@@ -181,7 +213,13 @@ export default function Home() {
 
           <Experience>
             <Experience.Period startDate="2020.07.01" endDate="2020.10.01" />
-            <Experience.Info title="차용증 서비스 유지보수">
+            <Experience.Info
+              title="김변호사 차용증 유지보수"
+              description="차용증을 모바일로 간편하게 작성하고 서명하는 서비스"
+            >
+              <IconLink link="https://play.google.com/store/apps/details?id=com.lawpang.client">
+                Google Play Link
+              </IconLink>
               <TaskList
                 experiences={[
                   "페이지를 이동할 때 마다 화면이 깜빡이는 문제를 해결하기 위해 jQuery로 작성된 코드를 Vue.js로 마이그레이션",
