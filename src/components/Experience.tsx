@@ -21,11 +21,14 @@ const ExperiencePeriod = ({
 
   if (month && month >= 12) {
     year = Math.floor(month / 12);
-    if (month % 12 > 0) month = month % 12;
+    const modulusMonth = month % 12;
+
+    if (modulusMonth > 0) month = modulusMonth;
+    else month = null;
   }
 
   return (
-    <div className="w-64">
+    <div className="w-64 flex flex-col gap-1">
       <p className="text-slate-500 text-xl">{period}</p>
       <p>
         {(month || year) && (
