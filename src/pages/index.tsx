@@ -239,7 +239,7 @@ export default function Home() {
             <TaskList
               experiences={[
                 "팀 프로젝트와 코드 리뷰를 통한 커뮤니케이션 기반 학습 경험",
-                "도서 스터디와 CS 스터디를 통해 CS 지식 습득을 습득하고 공유",
+                "도서 스터디와 CS 스터디를 통해 CS 지식을 습득하고 공유",
               ]}
             />
           </Experience.Info>
