@@ -1,5 +1,6 @@
 import Section from "@/components/Base/Section";
 import Experience from "@/components/Experience";
+import SkillList from "@/components/SkillList";
 import TaskList from "@/components/TaskList";
 import GithubIcon from "@public/github.svg";
 import RssIcon from "@public/rss.svg";
@@ -16,8 +17,8 @@ export default function Home() {
         </p>
         <p>
           현재는 브라우저와 프론트엔드 기술의 발전으로 인해 웹이 다양한 것을 할
-          수 있다는 것에 크게 흥미를 느끼고 프론트엔드 개발자로 커리어를
-          전환중입니다.
+          수 있다는 것에 크게 흥미를 느끼고 프론트엔드 개발자로 커리어를 전환
+          중입니다.
         </p>
         <div className="text-blue-500">
           <div className="flex items-center gap-1">
@@ -44,10 +45,10 @@ export default function Home() {
             >
               <TaskList
                 experiences={[
-                  "Python / Flask, FastAPI를 이용한 백엔드 개발",
-                  "GCP를 이용한 애플리케이션 배포",
+                  "Python / Flask, FastAPI를 이용한 백엔드 개발 경험",
+                  "GCP 기반의 클라우드 서비스 운영 경험",
                   "월간 리포트를 엑셀로 만들고 메일로 보내는 반복적인 업무를 배치 프로그램을 개발하여 자동화",
-                  "업무 외 시간 발생하는 서비스 장애에 신속하게 대응하기 위해 slack 알림으로 서버 상태를 모니터링 하여 월별 서비스 장애 문의 60% 이상 감소",
+                  "업무 외 시간 발생하는 서비스 장애에 신속하게 대응하기 위해 slack 알림으로 서버 상태를 모니터링하여 월별 서비스 장애 문의 60% 이상 감소",
                 ]}
               />
             </Experience.Info>
@@ -69,7 +70,15 @@ export default function Home() {
                   "Presentational & Container 패턴을 적용하여 일부 컴포넌트의 재사용성과 유지 보수성 향상",
                   "책 표지에서 가장 많이 사용 되는 색상을 추출하여 책등 렌더링",
                 ]}
-                // skill="FastAPI, MariaDB, OpenCV-Python"
+              />
+              <SkillList
+                skills={[
+                  "TypeScript",
+                  "Next.js",
+                  "React",
+                  "TanStack Query",
+                  "Chakra UI",
+                ]}
               />
             </Experience.Info>
           </Experience>
@@ -91,7 +100,9 @@ export default function Home() {
                   ],
                   "github actions을 이용하여 배포 자동화",
                 ]}
-                // skill="FastAPI, MariaDB, OpenCV-Python"
+              />
+              <SkillList
+                skills={["TypeScript", "React", "Recoil", "Styled-Components"]}
               />
             </Experience.Info>
           </Experience>
@@ -110,7 +121,9 @@ export default function Home() {
                   ["Gatsby 프레임워크 대비 배포시간이 약 110초 → 15초로 단축"],
                   "이미지를 리사이징하고 avif, webp 포맷으로 대체하여 이미지 payload를 909KB → 29KB로 감소",
                 ]}
-                // skill="FastAPI, MariaDB, OpenCV-Python"
+              />
+              <SkillList
+                skills={["TypeScript", "Astro", "React", "Tailwind CSS"]}
               />
             </Experience.Info>
           </Experience>
@@ -128,8 +141,8 @@ export default function Home() {
                   "state가 변경되는 경우에만 UI가 업데이트 되도록 구현",
                   "history API를 이용하여 새로 로드하지 않고 페이지 이동이 가능하도록 구현",
                 ]}
-                // skill="FastAPI, MariaDB, OpenCV-Python"
               />
+              <SkillList skills={["JavaScript"]} />
             </Experience.Info>
           </Experience>
 
@@ -143,7 +156,9 @@ export default function Home() {
                   "OpenCV를 활용하여 사용자가 촬영한 화상에서 특정 마커를 검출하는 로직 구현",
                   "과제의 목표치인 이미지 압축률 50% 이상, 3초 내 마커 검출, 성공률 90%를 달성",
                 ]}
-                // skill="FastAPI, MariaDB, OpenCV-Python"
+              />
+              <SkillList
+                skills={["Python", "FastAPI", "MariaDB", "OpenCV-Python"]}
               />
             </Experience.Info>
           </Experience>
@@ -157,8 +172,8 @@ export default function Home() {
                 experiences={[
                   "Swagger를 도입하여 엑셀로 관리되던 API 문서를 자동화",
                 ]}
-                // skill="Flask, MariaDB"
               />
+              <SkillList skills={["Python", "Flask", "MariaDB"]} />
             </Experience.Info>
           </Experience>
 
@@ -172,8 +187,8 @@ export default function Home() {
                   "페이지를 이동할 때 마다 화면이 깜빡이는 문제를 해결하기 위해 jQuery로 작성된 코드를 Vue.js로 마이그레이션",
                   "웹뷰와 앱 간 메시지 전달을 위한 인터페이스 정의",
                 ]}
-                // skill="Vue.js, Vuex"
               />
+              <SkillList skills={["JavaScript", "Vue.js", "Vuex"]} />
             </Experience.Info>
           </Experience>
         </div>
