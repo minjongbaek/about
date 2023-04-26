@@ -1,53 +1,67 @@
+import dayjs from "dayjs";
 import type { PropsWithChildren } from "react";
+import Label from "./Base/Label";
 
 const Experience = ({ children }: PropsWithChildren) => {
-  return <div className="flex gap-10">{children}</div>;
+  return <div className="flex gap-8">{children}</div>;
+};
+
+const ExperiencePeriod = ({
+  startDate,
+  endDate,
+}: {
+  startDate: string;
+  endDate?: string;
+}) => {
+  const period = `${dayjs(startDate).format("YYYY.MM")} ~ ${
+    endDate ? dayjs(endDate).format("YYYY.MM") : ""
+  }`;
+  let month = endDate ? dayjs(endDate).diff(startDate, "month") : null;
+  let year: number | null = null;
+
+  if (month && month >= 12) {
+    year = Math.floor(month / 12);
+    if (month % 12 > 0) month = month % 12;
+  }
+
+  return (
+    <div className="w-64">
+      <p className="text-slate-500 text-xl">{period}</p>
+      <p>
+        {(month || year) && (
+          <Label>
+            {year && year + "년 "}
+            {month && month + "개월"}
+          </Label>
+        )}
+        {!endDate && <Label>진행 중</Label>}
+      </p>
+    </div>
+  );
 };
 
 const ExperienceInfo = ({
   title,
-  period,
+  description,
+  children,
 }: {
   title: string;
-  period?: string;
-}) => {
+  description?: string;
+} & PropsWithChildren) => {
   return (
-    <div className="w-80">
-      <p className="font-bold">{title}</p>
-      {period && <p>{period}</p>}
+    <div className="flex flex-col w-full gap-4">
+      <div className="flex flex-col gap-2">
+        <h2 className="text-2xl font-bold break-keep">{title}</h2>
+        {description && (
+          <p className="text-base italic text-slate-400">{description}</p>
+        )}
+      </div>
+      {children}
     </div>
   );
 };
 
-const ExperienceDetail = ({
-  skill,
-  experiences,
-}: {
-  skill?: string;
-  experiences: string[];
-}) => {
-  const experienceList = getExperienceList(experiences);
-
-  return (
-    <div className="flex flex-col w-full">
-      {skill && <p>사용 기술: {skill}</p>}
-      {experienceList}
-    </div>
-  );
-};
-
-const getExperienceList = (experiences: string[] | string[][]) => {
-  return (
-    <ul className="list-disc ml-4">
-      {experiences.map((experience) => {
-        if (Array.isArray(experience)) return getExperienceList(experience);
-        return <li key={experience}>{experience}</li>;
-      })}
-    </ul>
-  );
-};
-
+Experience.Period = ExperiencePeriod;
 Experience.Info = ExperienceInfo;
-Experience.Detail = ExperienceDetail;
 
 export default Experience;

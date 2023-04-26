@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 const notoSansKR = Noto_Sans_KR({
   preload: true,
   subsets: ["latin"],
-  weight: ["100", "400", "700"],
+  weight: ["300", "400", "500", "700"],
 });
 
 const Main = ({ children }: { children: ReactNode }) => {
