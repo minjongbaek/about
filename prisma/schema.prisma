@@ -1,0 +1,61 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Introduce {
+  id          Int       @id @default(autoincrement())
+  text        String
+  github      String?   @db.VarChar(100)
+  blog        String?   @db.VarChar(100)
+}
+
+model WorkInfo {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String?   @db.VarChar(255)
+  startDate   String    @db.VarChar(10)
+  endDate     String?   @db.VarChar(10)
+  type        String    @db.VarChar(20)
+  experiences WorkExperience[]
+  links       Link[]
+  skills      WorksOnSkills[]
+}
+
+model WorkExperience {
+  id            Int     @id @default(autoincrement()) 
+  workId        Int     
+  work          WorkInfo @relation(fields: [workId], references: [id])
+  text          String  @db.VarChar
+  parentId      Int?    
+  parent        WorkExperience? @relation("ParentChild", fields:[parentId], references: [id])
+  children      WorkExperience[] @relation("ParentChild")
+}
+
+model Link {
+  id            Int       @id @default(autoincrement())
+  workId        Int
+  work          WorkInfo  @relation(fields: [workId], references: [id])
+  text          String    @db.VarChar(100)
+  url           String    @db.VarChar(255)
+  type          String    @db.VarChar(10)
+}
+
+model Skill {
+  id    Int                 @id @default(autoincrement())
+  text  String
+  works WorksOnSkills[]
+}
+
+model WorksOnSkills {
+  workId     Int
+  work       WorkInfo     @relation(fields: [workId], references: [id])
+  skillId    Int
+  skill      Skill        @relation(fields: [skillId], references: [id])
+
+  @@id([workId, skillId])
+}
