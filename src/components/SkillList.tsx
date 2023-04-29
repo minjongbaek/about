@@ -1,10 +1,11 @@
+import type { Skill } from "@/types/skill";
 import Label from "./Base/Label";
 
-const SkillList = ({ skills }: { skills: string[] }) => {
+const SkillList = ({ skills }: { skills: Skill[] }) => {
   return (
     <div className="flex gap-1">
-      {skills.map((skill) => (
-        <Label key={skill}>{skill}</Label>
+      {skills.map(({ id, text }) => (
+        <Label key={id}>{text}</Label>
       ))}
     </div>
   );

@@ -1,7 +1,7 @@
 import GithubIcon from "@public/github.svg";
 import RssIcon from "@public/rss.svg";
 import LinkIcon from "@public/link.svg";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 type IconType = "rss" | "github" | "link";
 

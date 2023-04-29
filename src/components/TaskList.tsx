@@ -1,16 +1,28 @@
-import { useId } from "react";
+import type { WorkExperience } from "@/types/work";
 
-const TaskList = ({ experiences }: { experiences: (string | string[])[] }) => {
-  const id = useId();
+const TaskList = ({
+  experiences,
+  id = 0,
+}: {
+  experiences: WorkExperience[];
+  id?: number;
+}) => {
   return (
     <ul
-      className="flex flex-col gap-2 list-disc ml-4 font-light"
       key={`ul-${id}`}
+      className="flex flex-col gap-2 list-disc ml-4 font-light"
     >
-      {experiences.map((experience) => {
-        if (Array.isArray(experience))
-          return TaskList({ experiences: experience });
-        return <li key={`li-${id}-${experience}`}>{experience}</li>;
+      {experiences.map(({ id, text, children }) => {
+        if (children && children.length !== 0) {
+          return (
+            <>
+              <li key={`li-${id}`}>{text}</li>
+              <TaskList id={id} experiences={children} />
+            </>
+          );
+        } else {
+          return <li key={`li-${id}`}>{text}</li>;
+        }
       })}
     </ul>
   );
