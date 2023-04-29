@@ -7,6 +7,7 @@ import prisma from "@/lib/prisma";
 import type { WorkInfo } from "@/types/work";
 import type { Introduce } from "@/types/introduce";
 import type { GetStaticProps } from "next";
+import Head from "next/head";
 
 interface HomeProps {
   introduce: Introduce;
@@ -23,6 +24,12 @@ export default function Home({
 }: HomeProps) {
   return (
     <div className="max-w-3xl container mx-auto px-4 py-12 flex flex-col gap-20">
+      <Head>
+        <title>백민종 | 이력서</title>
+        <meta name="description" content="백민종 이력서" />
+        <meta property="og:title" content="백민종" />
+        <meta property="og:description" content="이력서" />
+      </Head>
       <Section title="백민종">
         {introduce.text.split("\n").map((text, index) => (
           <p key={index}>{text}</p>
