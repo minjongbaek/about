@@ -1,28 +1,22 @@
 import type { WorkExperience } from "@/types/work";
 
-const TaskList = ({
-  experiences,
-  id = 0,
-}: {
-  experiences: WorkExperience[];
-  id?: number;
-}) => {
+const TaskList = ({ experiences }: { experiences: WorkExperience[] }) => {
   return (
-    <ul
-      key={`ul-${id}`}
-      className="flex flex-col gap-2 list-disc ml-4 font-light"
-    >
+    <ul className={"list-disc ml-4 font-light"}>
       {experiences.map(({ id, text, children }) => {
         if (children && children.length !== 0) {
           return (
-            <>
-              <li key={`li-${id}`}>{text}</li>
-              <TaskList id={id} experiences={children} />
-            </>
+            <li key={id} className="mt-2 first:mt-0">
+              {text}
+              <TaskList experiences={children} />
+            </li>
           );
-        } else {
-          return <li key={`li-${id}`}>{text}</li>;
         }
+        return (
+          <li key={id} className="mt-2 fist-of-type:mt-0">
+            {text}
+          </li>
+        );
       })}
     </ul>
   );
