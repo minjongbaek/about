@@ -3,11 +3,11 @@ import Experience from "@/components/Experience";
 import IconLink from "@/components/IconLink";
 import SkillList from "@/components/SkillList";
 import TaskList from "@/components/TaskList";
-import prisma from "@/lib/prisma";
 import type { WorkInfo } from "@/types/work";
 import type { Introduce } from "@/types/introduce";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
+import { getIntroduce, getWorkInfoByType } from "@/lib/prisma/workInfo";
 
 interface HomeProps {
   introduce: Introduce;
@@ -112,77 +112,10 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const introduce = await prisma.introduce.findFirst();
-
-  const careers = await prisma.workInfo.findMany({
-    where: {
-      type: "career",
-    },
-    orderBy: {
-      startDate: "desc",
-    },
-    include: {
-      experiences: {
-        include: {
-          children: true,
-        },
-        where: {
-          parentId: null,
-        },
-      },
-    },
-  });
-
-  const projects = await prisma.workInfo.findMany({
-    where: {
-      type: "project",
-    },
-    orderBy: {
-      startDate: "desc",
-    },
-    include: {
-      links: true,
-      experiences: {
-        include: {
-          children: true,
-        },
-        where: {
-          parentId: null,
-        },
-      },
-      skills: {
-        include: {
-          skill: true,
-        },
-      },
-    },
-  });
-
-  const activities = await prisma.workInfo.findMany({
-    where: {
-      type: "activity",
-    },
-    orderBy: {
-      startDate: "desc",
-    },
-    include: {
-      links: true,
-      experiences: {
-        include: {
-          children: true,
-        },
-        where: {
-          parentId: null,
-        },
-      },
-      skills: {
-        include: {
-          skill: true,
-        },
-      },
-    },
-  });
-
+  const introduce = await getIntroduce();
+  const careers = await getWorkInfoByType("career");
+  const projects = await getWorkInfoByType("project");
+  const activities = await getWorkInfoByType("activity");
   return {
     props: { introduce, careers, projects, activities },
     revalidate: 60,
