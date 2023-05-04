@@ -7,7 +7,7 @@ export interface WorkInfo {
   description?: string;
   startDate: string;
   endDate?: string;
-  type: "career" | "project";
+  type: "career" | "project" | "activity";
   experiences: WorkExperience[];
   links: Link[];
   skills: WorksOnSkills[];
