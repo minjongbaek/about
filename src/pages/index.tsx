@@ -23,7 +23,7 @@ export default function Home({
   activities,
 }: HomeProps) {
   return (
-    <div className="max-w-3xl container mx-auto px-4 py-12 flex flex-col gap-20">
+    <main className="max-w-3xl container mx-auto px-4 py-10 space-y-10">
       <Head>
         <title>백민종 | 이력서</title>
         <meta name="description" content="백민종 이력서" />
@@ -48,6 +48,7 @@ export default function Home({
           </IconLink>
         )}
       </Section>
+
       <Section title="경력">
         <div className="flex flex-col gap-12">
           {careers.map(
@@ -107,7 +108,7 @@ export default function Home({
           )}
         </div>
       </Section>
-    </div>
+    </main>
   );
 }
 
