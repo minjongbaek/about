@@ -9,6 +9,15 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "https://blog.minjongdev.com/resume",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
