@@ -34,16 +34,14 @@ const Resume = async () => {
 
   return (
     <div className="my-12 flex flex-col gap-20 p-4">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         <h1 className="leading-14">
           안녕하세요,
           <br />
           프론트엔드 개발자 <span className="text-blue-500">백민종</span>입니다.
         </h1>
         <BioLinks links={BIO} />
-        <div>
-          <IntroduceContent />
-        </div>
+        <IntroduceContent />
       </div>
 
       <Section title="경력" isBreak>
