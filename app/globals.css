@@ -20,15 +20,15 @@
   }
 
   h1 {
-    @apply text-5xl;
-  }
-
-  h2 {
     @apply text-4xl;
   }
 
-  h3 {
+  h2 {
     @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
   }
 
   h4 {
@@ -88,7 +88,7 @@
       @apply flex items-center;
 
       &:not(:first-child) {
-        @apply mt-6;
+        @apply mt-4;
       }
 
       &::after {

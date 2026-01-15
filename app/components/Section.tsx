@@ -4,7 +4,7 @@ import { SectionProps } from "@/types";
 export const Section: FC<SectionProps> = ({ title, isBreak, children }) => {
   return (
     <div className={isBreak ? "break-after-page" : ""}>
-      <h2 className="mb-4">{title}</h2>
+      <h1 className="mb-4">{title}</h1>
       <hr className="mt-4 mb-8 border-gray-300" />
       {children}
     </div>
