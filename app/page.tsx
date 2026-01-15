@@ -130,16 +130,16 @@ export default Resume;
 
 const BIO = [
   {
-    label: "Email",
-    href: "mailto:minjongbaek@gmail.com",
-  },
-  {
     label: "GitHub",
     href: "https://github.com/minjongbaek",
   },
   {
     label: "Blog",
     href: "https://blog.minjong.dev",
+  },
+  {
+    label: "Email",
+    href: "mailto:minjongbaek@gmail.com",
   },
 ];
 
