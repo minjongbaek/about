@@ -1,8 +1,8 @@
 import { BioLinks } from "./components/BioLinks";
-import { Section } from "./components/Section";
-import { ExperienceCard } from "./components/ExperienceCard";
-import { EducationCard } from "./components/EducationCard";
 import { CertificationCard } from "./components/CertificationCard";
+import { EducationCard } from "./components/EducationCard";
+import { ExperienceCard } from "./components/ExperienceCard";
+import { Section } from "./components/Section";
 
 const Resume = async () => {
   const { default: IntroduceContent } = await import(`@/content/introduce.mdx`);
