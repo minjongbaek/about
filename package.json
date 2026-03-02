@@ -11,18 +11,18 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^16.1.5",
+    "@next/mdx": "^16.1.6",
     "@types/mdx": "^2.0.13",
     "next": "16.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^16.1.5",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@next/eslint-plugin-next": "^16.1.6",
+    "@tailwindcss/postcss": "^4.0.12",
+    "@types/node": "^20.17.24",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.5",
     "eslint-config-prettier": "^10.1.1",
@@ -30,7 +30,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tailwindcss": "^4.0.12",
+    "typescript": "^5.8.2"
   }
 }
