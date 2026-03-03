@@ -1,8 +1,15 @@
 @import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
+
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
 
 @layer base {
   body {
-    @apply h-[297mm] w-[210mm] leading-7 break-keep;
+    @apply font-sans h-[297mm] w-[210mm] leading-7 tracking-tight text-gray-800 break-keep;
     width: 210mm;
     height: 297mm;
 
@@ -16,7 +23,7 @@
   h3,
   h4,
   h5 {
-    @apply font-semibold;
+    @apply font-semibold text-gray-900;
   }
 
   h1 {
@@ -41,7 +48,7 @@
 
   a {
     &:hover {
-      @apply text-blue-500;
+      @apply underline underline-offset-2;
     }
   }
 
@@ -49,13 +56,13 @@
     @apply ml-6 flex flex-col gap-1 pb-2;
 
     li {
-      @apply list-disc;
+      @apply list-disc marker:text-gray-400;
     }
   }
 
-  /* strong {
-    @apply text-blue-500;
-  } */
+  strong {
+    @apply font-semibold;
+  }
 
   blockquote {
     @apply my-2 rounded bg-gray-200/50 px-6 py-4;
@@ -66,14 +73,14 @@
   }
 
   code {
-    @apply rounded bg-gray-200/50 px-1.5 py-0.5 text-sm text-blue-500;
+    @apply rounded bg-gray-200/50 px-1.5 py-0.5 font-mono text-sm text-gray-700;
   }
 }
 
 @layer components {
   .markdown {
     a {
-      @apply text-blue-500 underline underline-offset-2;
+      @apply text-gray-900 underline underline-offset-2;
     }
 
     h3 {

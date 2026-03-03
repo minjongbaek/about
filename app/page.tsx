@@ -38,7 +38,7 @@ const Resume = async () => {
         <h1 className="leading-14">
           안녕하세요,
           <br />
-          프론트엔드 개발자 <span className="text-blue-500">백민종</span>입니다.
+          프론트엔드 개발자 <span className="font-bold underline underline-offset-4">백민종</span>입니다.
         </h1>
         <BioLinks links={BIO} />
         <IntroduceContent />
