@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "백민종 | 프론트엔드 개발자",
+  title: "백민종 | Frontend Engineer",
 };
 
 export default function RootLayout({

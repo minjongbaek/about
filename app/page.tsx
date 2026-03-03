@@ -2,6 +2,7 @@ import { BioLinks } from "./components/BioLinks";
 import { CertificationCard } from "./components/CertificationCard";
 import { EducationCard } from "./components/EducationCard";
 import { ExperienceCard } from "./components/ExperienceCard";
+import { PrintTitle } from "./components/PrintTitle";
 import { Section } from "./components/Section";
 
 const Resume = async () => {
@@ -34,6 +35,7 @@ const Resume = async () => {
 
   return (
     <div className="my-12 flex flex-col gap-20 p-4">
+      <PrintTitle title="백민종_Frontend_Engineer" />
       <div className="flex flex-col gap-4">
         <h1 className="leading-14">
           안녕하세요,
