@@ -9,13 +9,7 @@
 
 @layer base {
   body {
-    @apply font-sans h-[297mm] w-[210mm] leading-7 tracking-tight text-gray-800 break-keep;
-    width: 210mm;
-    height: 297mm;
-
-    @media (max-width: 576px) {
-      @apply h-full w-full;
-    }
+    @apply font-sans leading-7 tracking-tight text-gray-800 break-keep;
   }
 
   h1,

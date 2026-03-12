@@ -15,21 +15,23 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
 
   return (
     <div className="flex flex-col gap-4 py-10 first:pt-0 last:pb-0">
-      <div className="flex break-after-avoid flex-row items-center gap-3">
-        <div className="h-12 w-12 shrink-0 rounded-xl border border-gray-200/80 p-0.5">
-          <Image
-            src={imagePath}
-            alt={title}
-            width={120}
-            height={120}
-            className="rounded-lg"
-          />
+      <div className="flex break-after-avoid flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+        <div className="flex items-center gap-3">
+          <div className="h-12 w-12 shrink-0 rounded-xl border border-gray-200/80 p-0.5">
+            <Image
+              src={imagePath}
+              alt={title}
+              width={120}
+              height={120}
+              className="rounded-lg"
+            />
+          </div>
+          <div>
+            <h3>{title}</h3>
+            {position && <span className="text-gray-500">{position}</span>}
+          </div>
         </div>
-        <div className="flex grow items-center gap-2">
-          <h3>{title}</h3>
-          {position && <span className="text-gray-500">· {position}</span>}
-        </div>
-        <div className="shrink-0 text-right">
+        <div className="shrink-0 sm:ml-auto sm:text-right">
           <span>
             {startDate} - {endDate ?? currentStatusText}
           </span>
