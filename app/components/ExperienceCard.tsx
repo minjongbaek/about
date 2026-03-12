@@ -14,7 +14,7 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
   const currentStatusText = type === "WORK_EXPERIENCE" ? "재직중" : "진행중";
 
   return (
-    <div className="flex flex-col gap-4 py-10 first:pt-0 last:pb-0">
+    <div className="flex flex-col gap-2 py-6 first:pt-0 last:pb-0">
       <div className="flex break-after-avoid flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
         <div className="flex items-center gap-3">
           <div className="h-12 w-12 shrink-0 rounded-xl border border-gray-200/80 p-0.5">

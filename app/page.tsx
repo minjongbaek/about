@@ -6,8 +6,6 @@ import { PrintTitle } from "./components/PrintTitle";
 import { Section } from "./components/Section";
 
 const Resume = async () => {
-  const { default: IntroduceContent } = await import(`@/content/introduce.mdx`);
-
   const workExperienceWithContent = (
     await Promise.all(
       [...WORK_EXPERIENCE].map(async (experience) => {
@@ -34,7 +32,7 @@ const Resume = async () => {
   const certifications = [...Certifications].reverse();
 
   return (
-    <div className="my-12 flex flex-col gap-8 p-4 print:my-0 print:gap-5 print:px-[15mm] print:py-[15mm]">
+    <div className="my-12 flex flex-col gap-8 p-4 print:my-0 print:gap-5 print:p-0">
       <PrintTitle title="백민종_Frontend_Engineer" />
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -46,7 +44,22 @@ const Resume = async () => {
           </h1>
           <BioLinks links={BIO} />
         </div>
-        <IntroduceContent />
+        <div className="flex flex-col gap-2">
+          <p>
+            약 5년간 SaaS 플랫폼, 사내 협업 도구, 컨퍼런스 서비스 등 다양한
+            B2B/B2C 프로덕트의 프론트엔드를 담당해왔습니다.
+          </p>
+          <p>
+            레거시 프로젝트를 인수받아 개선하는 데 강점이 있으며, 번들 크기 75%
+            절감, 빌드 시간 60% 단축 등 측정 가능한 성과를 만들어 왔습니다. 통합
+            계정 시스템이나 QR 기반 입장 시스템 등 새로운 서비스를 설계하고
+            구축한 경험도 있습니다.
+          </p>
+          <p>
+            모니터링 데이터를 기반으로 기획자, 백엔드 개발자와 협업하며 사용자
+            경험과 개발자 경험을 함께 개선합니다.
+          </p>
+        </div>
       </div>
 
       <Section title="경력">
@@ -95,7 +108,7 @@ const Resume = async () => {
         </div>
       </Section>
 
-      <div className="flex flex-col gap-20 sm:flex-row sm:gap-12 [&>*]:flex-1">
+      <div className="flex break-inside-avoid flex-col gap-20 sm:flex-row sm:gap-12 [&>*]:flex-1">
         <Section title="교육">
           <div className="flex flex-col gap-8">
             {educations.map(

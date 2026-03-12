@@ -104,6 +104,10 @@
   }
 }
 
+@page {
+  margin: 20mm 15mm;
+}
+
 @media print {
   * {
     -webkit-print-color-adjust: exact !important;
