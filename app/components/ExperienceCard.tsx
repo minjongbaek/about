@@ -14,31 +14,29 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
   const currentStatusText = type === "WORK_EXPERIENCE" ? "재직중" : "진행중";
 
   return (
-    <div className="flex flex-col gap-8 sm:flex-row sm:gap-0">
-      <div className="flex w-full shrink-0 flex-row items-center gap-2 sm:mr-6 sm:w-42 sm:flex-col sm:items-start">
-        <div className="h-24 w-24 shrink-0 rounded-xl border border-gray-200/80 p-1 sm:h-20 sm:w-20">
+    <div className="flex flex-col gap-4 py-10 first:pt-0 last:pb-0">
+      <div className="flex break-after-avoid flex-row items-center gap-3">
+        <div className="h-12 w-12 shrink-0 rounded-xl border border-gray-200/80 p-0.5">
           <Image
             src={imagePath}
             alt={title}
             width={120}
             height={120}
-            className="rounded-"
+            className="rounded-lg"
           />
         </div>
-        <div className="flex w-full flex-col">
+        <div className="flex grow items-center gap-2">
           <h3>{title}</h3>
-          {position && <span>{position}</span>}
-          <div className="flex flex-row gap-1 sm:flex-col sm:gap-0">
-            <span>
-              {startDate} - {endDate ?? currentStatusText}
-            </span>
-            {endDate && <span>({getDuration(startDate, endDate)})</span>}
-          </div>
+          {position && <span className="text-gray-500">· {position}</span>}
+        </div>
+        <div className="shrink-0 text-right">
+          <span>
+            {startDate} - {endDate ?? currentStatusText}
+          </span>
+          {endDate && <span> ({getDuration(startDate, endDate)})</span>}
         </div>
       </div>
-      <div className="markdown grow border-gray-200/80 sm:border-l sm:pl-6">
-        {children}
-      </div>
+      <div className="markdown">{children}</div>
     </div>
   );
 };

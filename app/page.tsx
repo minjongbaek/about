@@ -34,20 +34,23 @@ const Resume = async () => {
   const certifications = [...Certifications].reverse();
 
   return (
-    <div className="my-12 flex flex-col gap-20 p-4">
+    <div className="my-12 flex flex-col gap-8 p-4 print:my-0 print:gap-5 print:px-[15mm] print:py-[15mm]">
       <PrintTitle title="백민종_Frontend_Engineer" />
-      <div className="flex flex-col gap-4">
-        <h1 className="leading-14">
-          안녕하세요,
-          <br />
-          프론트엔드 개발자 <span className="font-bold underline underline-offset-4">백민종</span>입니다.
-        </h1>
-        <BioLinks links={BIO} />
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <h1 className="leading-10">
+            안녕하세요,
+            <br />
+            프론트엔드 개발자 <span className="font-bold">백민종</span>
+            입니다.
+          </h1>
+          <BioLinks links={BIO} />
+        </div>
         <IntroduceContent />
       </div>
 
-      <Section title="경력" isBreak>
-        <div className="flex flex-col gap-12">
+      <Section title="경력">
+        <div className="flex flex-col divide-y divide-gray-200/80">
           {workExperienceWithContent.map(
             ({
               id,
@@ -74,7 +77,7 @@ const Resume = async () => {
       </Section>
 
       <Section title="프로젝트">
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col divide-y divide-gray-200/80">
           {sideProjectsWithContent.map(
             ({ id, title, startDate, endDate, SideProjectContent }) => (
               <ExperienceCard
@@ -92,36 +95,38 @@ const Resume = async () => {
         </div>
       </Section>
 
-      <Section title="교육">
-        <div className="flex flex-col gap-12">
-          {educations.map(
-            ({ id, title, major, degree, status, startDate, endDate }) => (
-              <EducationCard
+      <div className="flex flex-col gap-20 sm:flex-row sm:gap-12 [&>*]:flex-1">
+        <Section title="교육">
+          <div className="flex flex-col gap-8">
+            {educations.map(
+              ({ id, title, major, degree, status, startDate, endDate }) => (
+                <EducationCard
+                  key={id}
+                  title={title}
+                  major={major}
+                  degree={degree}
+                  status={status}
+                  startDate={startDate}
+                  endDate={endDate}
+                />
+              ),
+            )}
+          </div>
+        </Section>
+
+        <Section title="자격증">
+          <div className="flex flex-col gap-8">
+            {certifications.map(({ id, title, date, issuer }) => (
+              <CertificationCard
                 key={id}
                 title={title}
-                major={major}
-                degree={degree}
-                status={status}
-                startDate={startDate}
-                endDate={endDate}
+                date={date}
+                issuer={issuer}
               />
-            ),
-          )}
-        </div>
-      </Section>
-
-      <Section title="자격증">
-        <div className="flex flex-col gap-12">
-          {certifications.map(({ id, title, date, issuer }) => (
-            <CertificationCard
-              key={id}
-              title={title}
-              date={date}
-              issuer={issuer}
-            />
-          ))}
-        </div>
-      </Section>
+            ))}
+          </div>
+        </Section>
+      </div>
     </div>
   );
 };

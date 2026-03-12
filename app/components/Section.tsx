@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { SectionProps } from "@/types";
 
-export const Section: FC<SectionProps> = ({ title, isBreak, children }) => {
+export const Section: FC<SectionProps> = ({ title, children }) => {
   return (
-    <div className={isBreak ? "break-after-page" : ""}>
-      <h1 className="mb-4">{title}</h1>
+    <div>
+      <h2 className="mb-4">{title}</h2>
       <hr className="mt-4 mb-8 border-gray-300" />
       {children}
     </div>

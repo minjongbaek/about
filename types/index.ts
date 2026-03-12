@@ -36,6 +36,6 @@ export interface BioLinksProps {
 
 export interface SectionProps {
   title: string;
-  isBreak?: boolean;
+
   children: ReactNode;
 }

@@ -27,23 +27,23 @@
   }
 
   h1 {
-    @apply text-4xl;
-  }
-
-  h2 {
     @apply text-3xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl;
   }
 
+  h3 {
+    @apply text-xl;
+  }
+
   h4 {
-    @apply w-full pt-2.5 pb-2 text-xl;
+    @apply w-full pt-2.5 pb-2 text-lg;
   }
 
   h5 {
-    @apply pt-2.5 pb-2 text-lg;
+    @apply pt-2.5 pb-2 text-base;
   }
 
   a {
@@ -83,16 +83,16 @@
       @apply text-gray-900 underline underline-offset-2;
     }
 
-    h3 {
-      @apply mb-2;
+    h4 {
+      @apply mb-2 break-after-avoid;
 
       &:not(:first-child) {
         @apply mt-8 border-t border-gray-200/80 pt-8;
       }
     }
 
-    h4 {
-      @apply flex items-center;
+    h5 {
+      @apply flex items-center break-after-avoid;
 
       &:not(:first-child) {
         @apply mt-4;
@@ -122,5 +122,28 @@
     width: 210mm;
     height: 297mm;
     box-shadow: none;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  h1,
+  h2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 22px;
   }
 }
