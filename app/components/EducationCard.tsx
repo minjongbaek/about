@@ -1,14 +1,20 @@
-import { FC } from "react";
-import { EducationCardProps } from "@/types";
+interface EducationCardProps {
+  title: string;
+  major?: string;
+  degree?: string;
+  status: string;
+  startDate: string;
+  endDate: string;
+}
 
-export const EducationCard: FC<EducationCardProps> = ({
+export const EducationCard = ({
   title,
   major,
   degree,
   status,
   startDate,
   endDate,
-}) => {
+}: EducationCardProps) => {
   return (
     <div className="mr-6 flex flex-col gap-2">
       <h3>{title}</h3>

@@ -1,12 +1,18 @@
-import { FC } from "react";
-import { BioLinksProps } from "@/types";
+interface BioLink {
+  label: string;
+  href: string;
+}
+
+interface BioLinksProps {
+  links: BioLink[];
+}
 
 const getDisplayText = (href: string) => {
   if (href.startsWith("mailto:")) return href.replace("mailto:", "");
   return href.replace(/^https?:\/\//, "");
 };
 
-export const BioLinks: FC<BioLinksProps> = ({ links }) => {
+export const BioLinks = ({ links }: BioLinksProps) => {
   return (
     <div className="flex flex-col gap-1">
       {links.map(({ label, href }) => (

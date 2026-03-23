@@ -1,7 +1,13 @@
-import { FC } from "react";
-import { SectionProps } from "@/types";
+import { PropsWithChildren } from "react";
 
-export const Section: FC<SectionProps> = ({ title, children }) => {
+interface SectionProps {
+  title: string;
+}
+
+export const Section = ({
+  title,
+  children,
+}: PropsWithChildren<SectionProps>) => {
   return (
     <div>
       <h2 className="mb-4 break-after-avoid">{title}</h2>

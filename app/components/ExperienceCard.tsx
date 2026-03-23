@@ -1,8 +1,16 @@
 import Image from "next/image";
-import { FC } from "react";
-import { ExperienceCardProps } from "@/types";
+import { PropsWithChildren } from "react";
 
-export const ExperienceCard: FC<ExperienceCardProps> = ({
+interface ExperienceCardProps {
+  title: string;
+  position?: string;
+  startDate: string;
+  endDate?: string;
+  imagePath: string;
+  type: "WORK_EXPERIENCE" | "SIDE_PROJECT";
+}
+
+export const ExperienceCard = ({
   title,
   position,
   startDate,
@@ -10,7 +18,7 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
   imagePath,
   type,
   children,
-}) => {
+}: PropsWithChildren<ExperienceCardProps>) => {
   const currentStatusText = type === "WORK_EXPERIENCE" ? "재직중" : "진행중";
 
   return (
