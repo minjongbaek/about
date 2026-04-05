@@ -89,7 +89,7 @@ const Resume = async () => {
         </div>
       </Section>
 
-      <Section title="프로젝트">
+      <Section title="사이드 프로젝트">
         <div className="flex flex-col divide-y divide-gray-200/80">
           {sideProjectsWithContent.map(
             ({ id, title, startDate, endDate, SideProjectContent }) => (
